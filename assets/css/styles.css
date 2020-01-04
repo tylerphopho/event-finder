@@ -10,8 +10,13 @@
 
 
 .picker__date-display{
-    background-color: #512da8;
+    background-color:#512da8;
 }
-.picker__date-display, .picker__weekday-display{
-    background-color: #512da8;
+
+.picker__weekday-display {
+    background-color:#512da8;
+}
+
+.picker__day--selected, .picker__day--selected:hover, .picker--focused .picker__day--selected {
+    background-color:#512da8;
 }
