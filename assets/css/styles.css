@@ -1,8 +1,17 @@
 .section-search input {
-    padding: 5px !important;
-    margin: 5px !important;
+    padding: 5px !important;    
+    margin: 30px 5px !important;
     font-size: 16px !important;
     width: 90% !important;
     border: #f4f4f4 3px solid !important;
 
+}
+
+
+
+.picker__date-display{
+    background-color: #512da8;
+}
+.picker__date-display, .picker__weekday-display{
+    background-color: #512da8;
 }
