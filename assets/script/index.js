@@ -1,7 +1,22 @@
 $(document).ready(function(){
     $(".sidenav").sidenav();
-    $(".slider").slider();
-})
+    $(".slider").slider({
+        indicators: false,
+        height: 500,
+        transition: 500,
+        interval: 6000,
+    })
+
+    $(".datepicker").datepicker({
+        format: "mmmm dd/yyyy",
+        showClearBtn: true,
+        i18n:{
+            clear:'remove',
+            done: 'select'
+        }
+
+    });
+});
 
 
 
