@@ -21,8 +21,21 @@ $(document).ready(function(){
 
 var authKey = 'apikey=PmVlmcvc5NaJ0GJLCwaEc2KY1DzDLaKv';
 
-var queryUrlBase = 'http://app.ticketmaster.com/discovery/v1/events.json?keyword='
 
+
+
+function getEvents(searchTerm) {
+    var queryUrlBase = `http://app.ticketmaster.com/discovery/v1/events.json?keyword=${searchTerm}&${authKey}`
+
+    $.ajax({
+        method: "GET",
+        url: queryUrlBase
+    }).then(function(response) {
+        console.log(response)
+    });
+
+
+ }
 
 $(document).ready(function() {
 
@@ -35,7 +48,7 @@ $(document).ready(function() {
         e.preventDefault()
 
         var navbarSearch = $('#navbar-search').val().trim()
-        console.log(navbarSearch)
+        getEvents('madonna')
 
     })
     
