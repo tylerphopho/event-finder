@@ -8,17 +8,21 @@ $(document).ready(function(){
     })
 
     $(".datepicker").datepicker({
+        container: "body",
         format: "mmmm dd/yyyy",
-        showClearBtn: true,
+        showClearBtn: false,
         i18n:{
             clear:'remove',
             done: 'select'
+
         }
     })
 
     $("select").formSelect();
 
     $(".modal").modal();
+
+    $(".carousel").carousel();
 });
 
 
