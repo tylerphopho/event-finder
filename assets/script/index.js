@@ -15,6 +15,8 @@ $(document).ready(function(){
             done: 'select'
         }
     })
+
+    $("select").formSelect();
 });
 
 
