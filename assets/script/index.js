@@ -22,7 +22,11 @@ $(document).ready(function(){
 
     $(".modal").modal();
 
-    $(".carousel").carousel();
+    $(".carousel").carousel({
+        shift: 20,
+        padding: 50,
+        numVisible: 10
+    });
 });
 
 
