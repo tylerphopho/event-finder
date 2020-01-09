@@ -7,6 +7,10 @@
 
 }
 
+.input-field label {
+    color: #512da8;
+}
+
 #link {
     color: #00bfa5;
 }

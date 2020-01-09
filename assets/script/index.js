@@ -1,4 +1,20 @@
 $(document).ready(function(){
+
+
+    // Create click event function for for search input in navbar   
+    $('#navbar-search').keyup(function(e) {
+        e.preventDefault()
+
+        if(e.keyCode === 13) {
+            var navbarSearch = $('#navbar-search').val().trim()
+            console.log(navbarSearch)
+            if(navbarSearch !== "") {
+                getEvents(navbarSearch)
+            }
+        }
+
+
+    })
     // Materialize functions
     $(".sidenav").sidenav();
     $(".slider").slider({
@@ -28,6 +44,8 @@ $(document).ready(function(){
         padding: 50,
         numVisible: 10
     });
+
+    $("")
 });
 
 // variables
@@ -38,6 +56,7 @@ var carousel = $("#card-carousel");
 var authKey = 'apikey=PmVlmcvc5NaJ0GJLCwaEc2KY1DzDLaKv';
 
 function getEvents(searchTerm) {
+    // queryURL for Search
     var queryUrlBase = `http://app.ticketmaster.com/discovery/v2/events.json?keyword=${searchTerm}&${authKey}`
 
     $.ajax({
@@ -138,25 +157,27 @@ function getEvents(searchTerm) {
         }
  }
 
-$(document).ready(function() {
 
+ $("#link").on("click", function(){
+     carouselEvents()
+ });
 
-
-
-    // Create click event function for for search input in navbar   
-    $('#navbar-search').keyup(function(e) {
-        e.preventDefault()
-
-        if(e.keyCode === 13) {
-            var navbarSearch = $('#navbar-search').val().trim()
-            console.log(navbarSearch)
-            if(navbarSearch !== "") {
-                getEvents(navbarSearch)
-            }
+ function carouselEvents () {
+     $.ajax ({
+         method: "GET",
+         url: `https://app.ticketmaster.com/discovery/v2/events/images.json?size=1&apikey={apikey}`,
+     }).then(function(response){
+        console.log(response)
+        var results = response.data
+        for (var i = 0; i > results.length; i++) {
+            var eventDiv = $("<div>");
+            var p = $("<p>");
+            p.text(results[i].rating);
+            var eventImage = $("<img>");
+            eventImage.attr("src", results[i].images.fixed_height.url);
+            eventDiv.append(p, eventImage);
+            $("#modalInfo").prepend(eventDiv);
         }
-
-
-    })
-    
-}); 
+     })
+ }
 
