@@ -24,17 +24,6 @@ $(document).ready(function(){
         interval: 6000,
     })
 
-    $(".datepicker").datepicker({
-        container: "body",
-        format: "mmmm dd/yyyy",
-        showClearBtn: false,
-        i18n:{
-            clear:'remove',
-            done: 'select'
-
-        }
-    })
-
     $("select").formSelect();
 
     $(".modal").modal();
