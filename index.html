@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="assets/css/materialize/css/materialize.min.css"  media="screen,projection"/>
     <title>Event Finder</title>
@@ -14,7 +15,7 @@
 <body>
 
 <!-- ​Navbar Section -->
-<nav class="nav-wrapper purple darken-4">
+<nav class="nav-wrapper deep-purple darken-2">
   <div class="container">
     <a href="#" class="brand-logo">Event Finder</a>
     <a href="#" class="sidenav-trigger" data-target="mobile-links">
@@ -27,12 +28,14 @@
         <div class="row">
         <div class="input-field col s6 s12 white-text">
           <i class="white-text material-icons prefix">search</i>
-          <input id="navbar-search" type="text" class="white-text">
+          <input id="navbar-search" type="text" class="white-text" placeholder="search band">
         </div>
         </div>  
         </div>  
         </div>
       </li>
+      <!-- Modal Trigger -->
+      <button data-target="modal1" class="btn modal-trigger">Search Filters</button>
       <li><a href="#">Home</a></li>
       <li><a href="#">About</a></li>
       <li><a href="#">Contact</a></li>
@@ -40,7 +43,49 @@
   </div>
 ​
 </nav>
-​
+
+<!-- Modal Structure section -->
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <h5>Pick a Date</h5>
+      <form>
+          <div class="input-field">
+            <input type="text" class="datepicker">
+          </div>
+          <div class="input-field">
+            <p>Type of Event</p>
+            <p>
+              <label>
+                <input type="checkbox">
+                <span>Music</span>
+              </label>
+            </p>
+            <p>
+                <label>
+                  <input type="checkbox">
+                  <span>Sports</span>
+                </label>
+              </p>
+              <p>
+                  <label>
+                    <input type="checkbox">
+                    <span>Art & Theater</span>
+                  </label>
+                </p>
+          </div>
+          <div id="filterBtn" class="input-field">
+            <button class="btn">Apply Filters</button>
+          </div>
+        </form>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+  </div>
+</div>​
+
+
+
+<!-- Mobile Sidnav -->
 <ul class="sidenav" id="mobile-links">
   <li>
     <div class="input-field col s3 s6 white-text">
@@ -81,28 +126,197 @@
       </div>
     </li>
   </ul>
-</section>
 
-<!-- Search Bar section -->
-<section id="search" class="section section-search purple darken-4 white-text center scrollspy">
-  <div class="cotainer">
+<!-- Carousel section -->
+<section class="carousel-header deep-purple darken-2 white-text center scrollspy" id="section">
+  <div class="container">
     <div class="row">
       <div class="col s12">
-        <h3>Search Events</h3>
-        <div class="input-field">
-          <input type="text" class="white grey-text autocomplete" id="autocomplete-input" placeholder="">
-        </div>
+        <h4>Find an Event!</h4>
       </div>
     </div>
   </div>
 </section>
 
 
+<div class="carousel">
+  <div class="carousel-item">
+    <div class="card">
+      <div class="card-image">
+        <img src="assets/css/images/event-image-6.jpg">
+      </div>
+      <div class="card-content">
+        This is content
+      </div>
+      <div class="card-action">
+        <a id="link" href="#">More Info</a>
+      </div>
+    </div>
+  </div>
+  <div class="carousel-item">
+      <div class="card">
+        <div class="card-image">
+          <img src="assets/css/images/event-image-7.jpg">
+        </div>
+        <div class="card-content">
+          This is content
+        </div>
+        <div class="card-action">
+          <a id="link" href="#">More Info</a>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+        <div class="card small">
+          <div class="card-image">
+            <img src="assets/css/images/event-image-5.jpg">
+          </div>
+          <div class="card-content">
+            This is content
+          </div>
+          <div class="card-action">
+            <a id="link" href="#">More Info</a>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+          <div class="card">
+            <div class="card-image">
+              <img src="assets/css/images/event-image-1.jpg">
+            </div>
+            <div class="card-content">
+              This is content
+            </div>
+            <div class="card-action">
+              <a id="link" href="#">More Info</a>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+            <div class="card">
+              <div class="card-image">
+                <img src="assets/css/images/event-image-9.jpg">
+              </div>
+              <div class="card-content">
+                This is content
+              </div>
+              <div class="card-action">
+                <a id="link" href="#">More Info</a>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+              <div class="card">
+                <div class="card-image">
+                  <img src="assets/css/images/event-image-6.jpg">
+                </div>
+                <div class="card-content">
+                  This is content
+                </div>
+                <div class="card-action">
+                  <a id="link" href="#">More Info</a>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+                <div class="card">
+                  <div class="card-image">
+                    <img src="assets/css/images/event-image-6.jpg">
+                  </div>
+                  <div class="card-content">
+                    This is content
+                  </div>
+                  <div class="card-action">
+                    <a id="link" href="#">More Info</a>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                  <div class="card">
+                    <div class="card-image">
+                      <img src="assets/css/images/event-image-6.jpg">
+                    </div>
+                    <div class="card-content">
+                      This is content
+                    </div>
+                    <div class="card-action">
+                      <a id="link" href="#">More Info</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card">
+                      <div class="card-image">
+                        <img src="assets/css/images/event-image-6.jpg">
+                      </div>
+                      <div class="card-content">
+                        This is content
+                      </div>
+                      <div class="card-action">
+                        <a id="link" href="#">More Info</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                      <div class="card">
+                        <div class="card-image">
+                          <img src="assets/css/images/event-image-6.jpg">
+                        </div>
+                        <div class="card-content">
+                          This is content
+                        </div>
+                        <div class="card-action">
+                          <a id="link" href="#">More Info</a>
+                        </div>
+                      </div>
+                    </div>
+</div>
+
+
+
+
+<!-- <div class="row">
+  <div class="col s12 m7">
+    <div class="card medium">
+      <div class="card-image">
+        <img src="assets/css/images/event-image-6.jpg">
+        <span class="event-title">Event Title</span>
+      </div>
+      <div class="card-content">
+        <p>I'm a very simple card.</p>
+      </div>
+      <div class="card-action">
+        <a href="#">Link</a>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+</section>
+
+
+
+<!-- display results or no results section-->
+<section id="results-section">
+  <div class="container">
+    <div class="row">
+      <div class="col s12 center-align" id="results-div">
+
+        
+      </div>
+    </div>
+
+    <div class="row" >
+         <ul class="collection"> 
+       
+          </ul> 
+    </div>
+  </div>
+</section>
 <!-- jQuery -->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
 <script src="assets/script/index.js"></script>
 </body>
 </html
