@@ -28,14 +28,14 @@
         <div class="row">
         <div class="input-field col s6 s12 white-text">
           <i class="white-text material-icons prefix">search</i>
-          <input id="navbar-search" type="text" class="white-text" placeholder="search band">
+          <input id="navbar-search" type="text" class="white-text" placeholder="Search Event">
         </div>
         </div>  
         </div>  
         </div>
       </li>
       <!-- Modal Trigger -->
-      <button data-target="modal1" class="btn modal-trigger">Search Filters</button>
+      <button data-target="modalNavbar" class="btn modal-trigger">Search Filters</button>
       <li><a href="#">Home</a></li>
       <li><a href="#">About</a></li>
       <li><a href="#">Contact</a></li>
@@ -44,8 +44,8 @@
 ​
 </nav>
 
-<!-- Modal Structure section -->
-<div id="modal1" class="modal">
+<!-- Navbar Modal Structure section -->
+<div id="modalNavbar" class="modal">
   <div class="modal-content">
     <h5>Pick a Date</h5>
       <form>
@@ -83,6 +83,17 @@
   </div>
 </div>​
 
+
+<!-- Card Modal section -->
+<div id="modalInfo" class="modal">
+  <div class="modal-content">
+    <h4>Modal Header</h4>
+    <p>A bunch of text</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+  </div>
+</div>
 
 
 <!-- Mobile Sidnav -->
@@ -132,14 +143,14 @@
   <div class="container">
     <div class="row">
       <div class="col s12">
-        <h4>Find an Event!</h4>
+        <h4>Current Events</h4>
       </div>
     </div>
   </div>
 </section>
 
 
-<div class="carousel">
+<div id="card-carousel" class="carousel">
   <div class="carousel-item">
     <div class="card">
       <div class="card-image">
@@ -149,7 +160,7 @@
         This is content
       </div>
       <div class="card-action">
-        <a id="link" href="#">More Info</a>
+        <a id="link" href="#modalInfo" class="modal-close waves-effect waves-green modal-trigger">More Info</a>
       </div>
     </div>
   </div>
@@ -162,7 +173,7 @@
           This is content
         </div>
         <div class="card-action">
-          <a id="link" href="#">More Info</a>
+          <a id="link" href="#modalInfo" class="modal-close waves-effect waves-green modal-trigger">More Info</a>
         </div>
       </div>
     </div>
@@ -175,7 +186,7 @@
             This is content
           </div>
           <div class="card-action">
-            <a id="link" href="#">More Info</a>
+            <a id="link" href="#modalInfo" class="modal-close waves-effect waves-green modal-trigger">More Info</a>
           </div>
         </div>
       </div>
@@ -188,7 +199,7 @@
               This is content
             </div>
             <div class="card-action">
-              <a id="link" href="#">More Info</a>
+              <a id="link" href="#modalInfo" class="modal-close waves-effect waves-green modal-trigger">More Info</a>
             </div>
           </div>
         </div>
@@ -201,7 +212,7 @@
                 This is content
               </div>
               <div class="card-action">
-                <a id="link" href="#">More Info</a>
+                <a id="link" href="#modalInfo" class="modal-close waves-effect waves-green modal-trigger">More Info</a>
               </div>
             </div>
           </div>
@@ -214,7 +225,7 @@
                   This is content
                 </div>
                 <div class="card-action">
-                  <a id="link" href="#">More Info</a>
+                  <a id="link" href="#modalInfo" class="modal-close waves-effect waves-green modal-trigger">More Info</a>
                 </div>
               </div>
             </div>
@@ -227,7 +238,7 @@
                     This is content
                   </div>
                   <div class="card-action">
-                    <a id="link" href="#">More Info</a>
+                    <a id="link" href="#modalInfo" class="modal-close waves-effect waves-green modal-trigger">More Info</a>
                   </div>
                 </div>
               </div>
@@ -240,7 +251,7 @@
                       This is content
                     </div>
                     <div class="card-action">
-                      <a id="link" href="#">More Info</a>
+                      <a id="link" href="#modalInfo" class="modal-close waves-effect waves-green modal-trigger">More Info</a>
                     </div>
                   </div>
                 </div>
@@ -253,7 +264,7 @@
                         This is content
                       </div>
                       <div class="card-action">
-                        <a id="link" href="#">More Info</a>
+                        <a id="link" href="#modalInfo" class="modal-close waves-effect waves-green modal-trigger">More Info</a>
                       </div>
                     </div>
                   </div>
@@ -266,31 +277,11 @@
                           This is content
                         </div>
                         <div class="card-action">
-                          <a id="link" href="#">More Info</a>
+                          <a id="link" href="#modalInfo" class="modal-close waves-effect waves-green modal-trigger">More Info</a>
                         </div>
                       </div>
                     </div>
 </div>
-
-
-
-
-<!-- <div class="row">
-  <div class="col s12 m7">
-    <div class="card medium">
-      <div class="card-image">
-        <img src="assets/css/images/event-image-6.jpg">
-        <span class="event-title">Event Title</span>
-      </div>
-      <div class="card-content">
-        <p>I'm a very simple card.</p>
-      </div>
-      <div class="card-action">
-        <a href="#">Link</a>
-      </div>
-    </div>
-  </div>
-</div> -->
 
 </section>
 
