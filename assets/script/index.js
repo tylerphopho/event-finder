@@ -32,6 +32,7 @@ $(document).ready(function(){
 
 // variables
 var collectionGroup = $('.collection');
+var carousel = $("#card-carousel");
 
 
 var authKey = 'apikey=PmVlmcvc5NaJ0GJLCwaEc2KY1DzDLaKv';
@@ -89,6 +90,7 @@ function getEvents(searchTerm) {
         resultsHeader.addClass('results-header left-align');
         console.log(navbarSearch)
         resultsHeader.text(`Results for: ${navbarSearch}`);
+        carousel.addClass("hide");
         resultsDiv.empty()
         
         resultsDiv.append(resultsHeader);
