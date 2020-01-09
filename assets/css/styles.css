@@ -1,0 +1,34 @@
+.section-search input {
+    padding: 5px !important;    
+    margin: 30px 5px !important;
+    font-size: 16px !important;
+    width: 90% !important;
+    border: #f4f4f4 3px solid !important;
+
+}
+
+#link {
+    color: #00bfa5;
+}
+
+.carousel-item{
+    width: 500px;
+}
+
+.carousel {
+    width: 100%;
+    height: 700px;
+    transform: translateY(-100px);
+}
+
+.picker__date-display{
+    background-color:#512da8;
+}
+
+.picker__weekday-display {
+    background-color:#512da8;
+}
+
+.picker__day--selected, .picker__day--selected:hover, .picker--focused .picker__day--selected {
+    background-color:#512da8;
+}
