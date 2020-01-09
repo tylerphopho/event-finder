@@ -1,7 +1,33 @@
 $(document).ready(function(){
     $(".sidenav").sidenav();
-    $(".slider").slider();
-})
+    $(".slider").slider({
+        indicators: false,
+        height: 500,
+        transition: 500,
+        interval: 6000,
+    })
+
+    $(".datepicker").datepicker({
+        container: "body",
+        format: "mmmm dd/yyyy",
+        showClearBtn: false,
+        i18n:{
+            clear:'remove',
+            done: 'select'
+
+        }
+    })
+
+    $("select").formSelect();
+
+    $(".modal").modal();
+
+    $(".carousel").carousel({
+        shift: 20,
+        padding: 50,
+        numVisible: 10
+    });
+});
 
 // variables
 var collectionGroup = $('.collection');
