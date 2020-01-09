@@ -138,9 +138,6 @@ function getEvents(searchTerm) {
 $(document).ready(function() {
 
 
-    $('.carousel').carousel();
-
-
     // Create click event function for for search input in navbar   
     $('#navbar-search').keyup(function(e) {
         e.preventDefault()
