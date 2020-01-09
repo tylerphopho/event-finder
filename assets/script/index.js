@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    // Materialize functions
     $(".sidenav").sidenav();
     $(".slider").slider({
         indicators: false,
@@ -138,7 +139,6 @@ function getEvents(searchTerm) {
 $(document).ready(function() {
 
 
-    $('.carousel').carousel();
 
 
     // Create click event function for for search input in navbar   
