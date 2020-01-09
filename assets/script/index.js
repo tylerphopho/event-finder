@@ -165,7 +165,7 @@ function getEvents(searchTerm) {
 //  function carouselEvents () {
 //      $.ajax ({
 //          method: "GET",
-//          url: `https://app.ticketmaster.com/discovery/v2/events/locale.json?size=1&apikey=${authKey}`,
+//          url: `https://app.ticketmaster.com/discovery/v2/events/.json?size=1&apikey=${authKey}`,
 //      }).then(function(response){
 //         console.log(response)
 //         var results = response.data
@@ -179,5 +179,5 @@ function getEvents(searchTerm) {
 //             $("#modalInfo").prepend(eventDiv);
 //         }
 //      })
- }
+//  }
 
