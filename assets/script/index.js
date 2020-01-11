@@ -24,8 +24,6 @@ $(document).ready(function(){
         interval: 6000,
     })
 
-<<<<<<< HEAD
-=======
     // $(".datepicker").datepicker({
     //     container: "body",
     //     format: "mmmm dd/yyyy",
@@ -37,7 +35,6 @@ $(document).ready(function(){
     //     }
     // })
 
->>>>>>> af00b442aef3f8b07cdff825029e8580c5724f67
     $("select").formSelect();
 
     $(".modal").modal();
@@ -215,14 +212,14 @@ function getEvents(searchTerm) {
  // function to display the modal with additional event details
 function getModal(searchTerm) {
     var queryUrlModal = `http://app.ticketmaster.com/discovery/v2/events.json?keyword=${searchTerm}&${authKey}`;
-
+    $("")
     $.ajax({
         method: "GET",
         url: queryUrlModal
     }).then(function(details, info) {
         console.log(details._embedded.events)
 
-        modalInfo(details._embedded.events)
+        modalInfo(details._embedded.events) 
     });
 }
 
