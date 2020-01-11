@@ -153,17 +153,22 @@ function getEvents(searchTerm) {
             console.log(
                 $(this).data('index')
                 )
-                // index of button clicked
-                $(this).data('index')
+               
                 // large array of all data
-                event
-
+        event
+                // console.log(info[j]._embedded.venues[0].location.longitude)
+                // var longitude = info[j]._embedded.venues[0].location.longitude;
+                // var latitude = info[j]._embedded.venues[0].location.latitude;
+                // console.log(longitude, latitude)
 
             
             modalCall(event[$(this).data('index')].name)
                 //somevar here
-               
-            
+            var longEvent = event[$(this).data('index')]._embedded.venues[0].location.longitude;
+            var latEvent = event[$(this).data('index')]._embedded.venues[0].location.latitude;
+            findEvent(longEvent, latEvent);
+            // [""0""]._embedded.venues[""0""].location.longitude
+            console.log(longEvent);
           });
           eventRow.append(detailsBtnCol);
 
@@ -186,6 +191,20 @@ function getEvents(searchTerm) {
 
         }
  }
+ function findEvent(longitude, latitude){
+    // findEvent(longitude, latitude)
+    // var longitude= event[i]._embedded.venues[0].location.longitude;
+    
+        var queryMapAPI = 'https://image.maps.ls.hereapi.com/mia/1.6/mapview'+
+        '?apiKey=OsiyIDiSxgJ3oNZHVzo-E2tc6EB4kpsp6yJApZiheIc'+
+        '&lat='+ latitude +
+        '&lon=' + longitude + 
+        '&vt=0' +
+        '&z=14'
+        $('#map').attr("src", queryMapAPI); 
+        console.log(queryMapAPI);
+
+        }
 
 
 
@@ -198,7 +217,7 @@ function getEvents(searchTerm) {
     }).then(function(response) {
         console.log(response._embedded.events)
             modalInfo(response._embedded.events)
-            console.log(response)
+            console.log(response._embedded.events)
         
     });
  }
@@ -212,28 +231,16 @@ function getEvents(searchTerm) {
      $(".event-detail").append(modalHeader)
      $(".event.map")
 
-     console.log(info[j]._embedded.venues[0].location.longitude)
+    //  console.log(info[j]._embedded.venues[0].location.longitude)
+    //  var longitude = info[j]._embedded.venues[0].location.longitude;
+    //  var latitude = info[j]._embedded.venues[0].location.latitude;
+    //  console.log(longitude, latitude)
     }
      
  }
 
 
-// var latitude= event[i]._embedded.venues[0].location.latitude;
- function findEvent(){
-// findEvent(longitude, latitude)
-// var longitude= event[i]._embedded.venues[0].location.longitude;
 
-
-
-    var queryMapAPI = 'https://image.maps.ls.hereapi.com/mia/1.6/mapview'+
-    '?apiKey=OsiyIDiSxgJ3oNZHVzo-E2tc6EB4kpsp6yJApZiheIc'+
-    '&lat='+ latitude +
-    '&lon=' + longitude + 
-    '&vt=0' +
-    '&z=14'
-    $('#map').attr("src", queryMapAPI); 
-    
-    }
 $(document).ready(function() {
 
 
