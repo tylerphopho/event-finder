@@ -151,22 +151,8 @@ function getEvents(searchTerm) {
      carouselEvents()
  });
 
-//  function carouselEvents () {
-//      $.ajax ({
-//          method: "GET",
-//          url: `https://app.ticketmaster.com/discovery/v2/events/.json?size=1&apikey=${authKey}`,
-//      }).then(function(response){
-//         console.log(response)
-//         var results = response.data
-//         for (var i = 0; i > results.length; i++) {
-//             var eventDiv = $("<div>");
-//             var p = $("<p>");
-//             p.text(results[i].rating);
-//             var eventImage = $("<img>");
-//             eventImage.attr("src", results[i].images.fixed_height.url);
-//             eventDiv.append(p, eventImage);
-//             $("#modalInfo").prepend(eventDiv);
-//         }
-//      })
-//  }
 
+ $.getJSON("https://app.ticketmaster.com/discovery/v2/attractions.json?apikey=PmVlmcvc5NaJ0GJLCwaEc2KY1DzDLaKv", 
+    function(data){
+    console.log(data);
+ });
