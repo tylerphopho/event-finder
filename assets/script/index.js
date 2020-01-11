@@ -39,6 +39,8 @@ $(document).ready(function(){
 
     $(".modal").modal();
 
+    $(".scrollspy").scrollSpy();
+
     $(".carousel").carousel({
         shift: 20,
         padding: 50,
@@ -75,6 +77,15 @@ function getEvents(searchTerm) {
         }
 
     });
+
+// function getCity(searchTerm) {
+//     $.ajax({
+//         method: "GET",
+//         url: `http://app.ticketmaster.com/discovery/v2/venues.json?keyword=${searchTerm}&${authKey}`
+//     }).then(function(response){
+//         console.log(response)
+//     });
+// }
 
  }
 
@@ -233,11 +244,13 @@ $(document).ready(function() {
 
         // if(e.keyCode === 13) {
             var navbarSearch = $('#event-search').val().trim()
-            // var citySearch = $('#city-serach').val().trim();
-            // console.log(citySearch)
+            var citySearch = $('#city-serach').val()
+            console.log(citySearch)
             console.log(navbarSearch)
             if(navbarSearch !== "") {
                 getEvents(navbarSearch)
+            } else if (citySearch !=="") {
+                getCity(citySearch)
             }
         //}
 
