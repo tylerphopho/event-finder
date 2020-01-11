@@ -16,8 +16,8 @@
 
 <!-- ​Navbar Section -->
 <nav class="nav-wrapper deep-purple darken-2">
-  <div class="container">
-    <a href="#" class="brand-logo">Event Finder</a>
+  <div id="home" class="container scrollspy">
+    <a href="#home" class="brand-logo">Event Finder</a>
     <a href="#" class="sidenav-trigger" data-target="mobile-links">
       <i class="material-icons">menu</i>
     </a>
@@ -27,18 +27,14 @@
           <div class="col m12">
             <div class="row">
               <form>
-                  <div class="input-field col s4">
+                  <div class="input-field col s6">
                       <i class="white-text material-icons prefix">search</i>
                       <input id="event-search" type="text" class="white-text" placeholder="Search Event">
                   </div>
-                  <div class="input-field col s4">
-                    <input id="city-search" class="white-text" type="text" placeholder="Search City">                 
-                  </div> 
-                  <div class="col s2">
+                  <div class="col s6">
                     <button id="navbar-search" class="btn-small white purple-text">Search</button>
                   </div>
               </form>
-              
             </div>  
           </div>  
         </div>
@@ -67,9 +63,6 @@
       <input type="text" class="black-text" id="sidenav-search" > 
     </div>
   </li>
-  <li><a href="#">Home</a></li>
-  <li><a href="#">About</a></li>
-  <li><a href="#">Contact</a></li>
 </ul>
 
 <!-- Slider section -->
@@ -78,17 +71,15 @@
     <li>
       <img src="assets/css/images/event-image-4.jpg">
       <div class="caption center-align">
-        <h2>Welcome to Code-Breakers Music Event-Finder!</h2>
-        <h5 class="light grey-text text-lighten-3
-        hide-on-small-only">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h5>
+        <h2>Welcome to Code-Breakers <br> Event-Finder!</h2>
       </div>
     </li>
     <li>
       <img src="assets/css/images/event-image-2.jpg">
       <div class="caption left-align">
-        <h2>Find Upcoming Music Events Around You.</h2>
+        <h2>Find Upcoming Events Around You.</h2>
         <h5 class="light grey-text text-lighten-3
-        hide-on-small-only">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, facilis sint fugit deleniti eos temporibus repellendus error consectetur deserunt enim!</h5>
+        hide-on-small-only">Search by locations or event names.</h5>
       </div>
     </li>
     <li>
@@ -101,8 +92,8 @@
     </li>
   </ul>
 
-<!-- Carousel section -->
-<section class="carousel-header deep-purple darken-2 white-text center scrollspy" id="section">
+<!-- Header for Searched Items section -->
+<section class="header deep-purple darken-2 white-text center scrollspy hide" id="section">
   <div class="container">
     <div class="row">
       <div class="col s12">
@@ -111,6 +102,7 @@
     </div>
   </div>
 </section>
+
 
 <!-- display results or no results section-->
 <section id="results-section">
@@ -128,6 +120,28 @@
           </ul> 
     </div>
   </div>
+
+<!-- Footer Section -->
+
+<footer class="page-footer deep-purple darken-2 scrollspy">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">© 2019 Copyright Text</h5>
+          <p>Hope you enjoyed the page.</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5><a class="grey-text text-lighten-3" href="#home">Home</a></h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="https://github.com/MR-TYLER31">Tyler Snyder</a></li>
+            <li><a class="grey-text text-lighten-3" href="https://github.com/tylerphopho">Tyler Pho</a></li>
+            <li><a class="grey-text text-lighten-3" href="https://github.com/CynthiaHigley">Cynthia Higley</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    </div>
+  </footer>
 </section>
 
 <!-- jQuery -->

@@ -1,4 +1,20 @@
 $(document).ready(function(){
+
+
+    // Create click event function for for search input in navbar   
+    $('#navbar-search').keyup(function(e) {
+        e.preventDefault()
+
+        if(e.keyCode === 13) {
+            var navbarSearch = $('#navbar-search').val().trim()
+            console.log(navbarSearch)
+            if(navbarSearch !== "") {
+                getEvents(navbarSearch)
+            }
+        }
+
+
+    })
     // Materialize functions
     $(".sidenav").sidenav();
     $(".slider").slider({
@@ -23,11 +39,15 @@ $(document).ready(function(){
 
     $(".modal").modal();
 
+    $(".scrollspy").scrollSpy();
+
     $(".carousel").carousel({
         shift: 20,
         padding: 50,
         numVisible: 10
     });
+
+    $("")
 });
 
 // variables
@@ -41,6 +61,7 @@ var modalContent = $('.modal-content');
 var authKey = 'apikey=PmVlmcvc5NaJ0GJLCwaEc2KY1DzDLaKv';
 
 function getEvents(searchTerm) {
+    // queryURL for Search
     var queryUrlBase = `http://app.ticketmaster.com/discovery/v2/events.json?keyword=${searchTerm}&${authKey}`
 
     $.ajax({
@@ -53,9 +74,19 @@ function getEvents(searchTerm) {
             displayNoResults()
         } else {
             displayResults(response._embedded.events)
-        }
+        } 
 
-    });
+    })
+
+    // function cityEvents(searchTerm) {
+    //     $.ajax({
+    //         method: "GET",
+    //         url: `http://app.ticketmaster.com/discovery/v2/events/city.json?keyword=${searchTerm}&${authKey}`
+    //     }).then(function(response){
+    //         console.log(response)
+    //     })
+    // }
+
 
  }
 
@@ -79,15 +110,14 @@ function getEvents(searchTerm) {
 // If search is valid display colletion of events
  function displayResults(event) {
 
+    $("#section").removeClass("hide")
     collectionGroup.empty()
     console.log(event)
 
         var resultsDiv = $('#results-div');
         var navbarSearch = $('#event-search').val().trim()
-        var citySearch = $('#city-search').val().trim()
-        var rowCard = $('row card-rows')
-
-    
+        // var citySearch = $('#city-search').val().trim()
+        // var rowCard = $('row card-rows')
         var resultsHeader = $('<h3>');
         resultsHeader.addClass('results-header left-align');
         console.log(navbarSearch)
@@ -127,7 +157,7 @@ function getEvents(searchTerm) {
           var timeZone = event[i].dates.timezone
           console.log(timeZone)
 
-          collectionTime.html(`${moment(standardTime, 'HH:mm:ss').format('h:mm:ss A')} ${timeZone} Time`);
+          collectionTime.html(`${moment(standardTime, 'HH:mm:ss').format('h:mm A')} ${timeZone} Time`);
           collectionDate.append(collectionTime)
 
    
@@ -193,14 +223,14 @@ function getEvents(searchTerm) {
  // function to display the modal with additional event details
 function getModal(searchTerm) {
     var queryUrlModal = `http://app.ticketmaster.com/discovery/v2/events.json?keyword=${searchTerm}&${authKey}`;
-
+    $("")
     $.ajax({
         method: "GET",
         url: queryUrlModal
     }).then(function(details, info) {
         console.log(details._embedded.events)
 
-        modalInfo(details._embedded.events)
+        modalInfo(details._embedded.events) 
     });
 }
 
@@ -214,13 +244,12 @@ $(document).ready(function() {
 
         // if(e.keyCode === 13) {
             var navbarSearch = $('#event-search').val().trim()
-            // var citySearch = $('#city-serach').val().trim();
-            // console.log(citySearch)
+            var citySearch = $('#city-serach').val()
+            console.log(citySearch)
             console.log(navbarSearch)
             if(navbarSearch !== "") {
-                getEvents(navbarSearch)
-            }
-        //}
+                getEvents(navbarSearch, citySearch)
+        }
 
     })
 
@@ -231,7 +260,7 @@ $(document).ready(function() {
         if(e.keyCode === 13) {
             var navbarSearch= $('#sidenav-search').val().trim()
             console.log(navbarSearch)
-            if(navbarSearch !== "") {
+            if(navbarSearch !== "" || citySearch !== "") {
                 getEvents(navbarSearch)
             }
         }
@@ -264,3 +293,7 @@ $(document).ready(function() {
     
 }); 
 
+ $.getJSON("https://app.ticketmaster.com/discovery/v2/attractions.json?apikey=PmVlmcvc5NaJ0GJLCwaEc2KY1DzDLaKv", 
+    function(data){
+    console.log(data);
+ });
