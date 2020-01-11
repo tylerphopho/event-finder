@@ -32,3 +32,16 @@
 .picker__day--selected, .picker__day--selected:hover, .picker--focused .picker__day--selected {
     background-color:#512da8;
 }
+
+.modal-content{
+    padding: 5px !important;    
+    margin: 30px 5px !important;
+    font-size: 16px !important;
+    width: 90% !important;
+    height: 500px; 
+    border: #f4f4f4 3px solid !important;
+
+}
+.ticketsBtn {
+    background-color: #00bfa5
+}

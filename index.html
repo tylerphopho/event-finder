@@ -24,65 +24,47 @@
     <ul class="right hide-on-med-and-down">
       <li>
         <div class="center row">
-        <div class="col s12">
-        <div class="row">
-        <div class="input-field col s6 s12 white-text">
-          <i class="white-text material-icons prefix">search</i>
-          <input id="navbar-search" type="text" class="white-text" placeholder="search band">
-        </div>
-        </div>  
-        </div>  
+          <div class="col m12">
+            <div class="row">
+              <form>
+                  <div class="input-field col s4">
+                      <i class="white-text material-icons prefix">search</i>
+                      <input id="event-search" type="text" class="white-text" placeholder="Search Event">
+                  </div>
+                  <div class="input-field col s4">
+                    <input id="city-search" class="white-text" type="text" placeholder="Search City">                 
+                  </div> 
+                  <div class="col s2">
+                    <button id="navbar-search" class="btn-small white purple-text">Search</button>
+                  </div>
+              </form>
+              
+            </div>  
+          </div>  
         </div>
       </li>
-      <!-- Modal Trigger -->
-      <button data-target="modal1" class="btn modal-trigger">Search Filters</button>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Contact</a></li>
     </ul>
   </div>
-​
 </nav>
 
-<!-- Modal Structure section -->
+<!-- Navbar Modal Structure section -->
 <div id="modal1" class="modal">
   <div class="modal-content">
-    <h5>Pick a Date</h5>
-      <form>
-          <div class="input-field">
-            <input type="text" class="datepicker">
-          </div>
-          <div class="input-field">
-            <p>Type of Event</p>
-            <p>
-              <label>
-                <input type="checkbox">
-                <span>Music</span>
-              </label>
-            </p>
-            <p>
-                <label>
-                  <input type="checkbox">
-                  <span>Sports</span>
-                </label>
-              </p>
-              <p>
-                  <label>
-                    <input type="checkbox">
-                    <span>Art & Theater</span>
-                  </label>
-                </p>
-          </div>
-          <div id="filterBtn" class="input-field">
-            <button class="btn">Apply Filters</button>
-          </div>
-        </form>
+    <div class="detail-content row">
+    
+      <div class="event-detail col s6"></div>
+      <div class="event-map col s4">
+        <img id="map"> 
+      </div>
+    </div>
+  <!-- <h4>Hello world</h4>
+  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam est dolor provident, consequatur necessitatibus architecto! Excepturi quos eligendi, commodi facere minima ipsam. Eos fugiat libero est culpa quibusdam error totam.</p> -->
   </div>
   <div class="modal-footer">
     <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+    <p>Univerisity of Utah  Code Breakefrs Group Project 1 @ copywrite 2020</p>
   </div>
 </div>​
-
 
 
 <!-- Mobile Sidnav -->
@@ -90,7 +72,7 @@
   <li>
     <div class="input-field col s3 s6 white-text">
       <i class="purple-text material-icons prefix">search</i>
-      <input type="text" class="black-text"> 
+      <input type="text" class="black-text" id="sidenav-search" > 
     </div>
   </li>
   <li><a href="#">Home</a></li>
@@ -132,182 +114,11 @@
   <div class="container">
     <div class="row">
       <div class="col s12">
-        <h4>Find an Event!</h4>
+        <h4>Upcoming Events</h4>
       </div>
     </div>
   </div>
 </section>
-
-
-<div class="carousel">
-  <div class="carousel-item">
-    <div class="card">
-      <div class="card-image">
-        <img src="assets/css/images/event-image-6.jpg">
-      </div>
-      <div class="card-content">
-        This is content
-      </div>
-      <div class="card-action">
-        <a id="link" href="#">More Info</a>
-      </div>
-    </div>
-  </div>
-  <div class="carousel-item">
-      <div class="card">
-        <div class="card-image">
-          <img src="assets/css/images/event-image-7.jpg">
-        </div>
-        <div class="card-content">
-          This is content
-        </div>
-        <div class="card-action">
-          <a id="link" href="#">More Info</a>
-        </div>
-      </div>
-    </div>
-    <div class="carousel-item">
-        <div class="card small">
-          <div class="card-image">
-            <img src="assets/css/images/event-image-5.jpg">
-          </div>
-          <div class="card-content">
-            This is content
-          </div>
-          <div class="card-action">
-            <a id="link" href="#">More Info</a>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-          <div class="card">
-            <div class="card-image">
-              <img src="assets/css/images/event-image-1.jpg">
-            </div>
-            <div class="card-content">
-              This is content
-            </div>
-            <div class="card-action">
-              <a id="link" href="#">More Info</a>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-            <div class="card">
-              <div class="card-image">
-                <img src="assets/css/images/event-image-9.jpg">
-              </div>
-              <div class="card-content">
-                This is content
-              </div>
-              <div class="card-action">
-                <a id="link" href="#">More Info</a>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-              <div class="card">
-                <div class="card-image">
-                  <img src="assets/css/images/event-image-6.jpg">
-                </div>
-                <div class="card-content">
-                  This is content
-                </div>
-                <div class="card-action">
-                  <a id="link" href="#">More Info</a>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-                <div class="card">
-                  <div class="card-image">
-                    <img src="assets/css/images/event-image-6.jpg">
-                  </div>
-                  <div class="card-content">
-                    This is content
-                  </div>
-                  <div class="card-action">
-                    <a id="link" href="#">More Info</a>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                  <div class="card">
-                    <div class="card-image">
-                      <img src="assets/css/images/event-image-6.jpg">
-                    </div>
-                    <div class="card-content">
-                      This is content
-                    </div>
-                    <div class="card-action">
-                      <a id="link" href="#">More Info</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="card">
-                      <div class="card-image">
-                        <img src="assets/css/images/event-image-6.jpg">
-                      </div>
-                      <div class="card-content">
-                        This is content
-                      </div>
-                      <div class="card-action">
-                        <a id="link" href="#">More Info</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                      <div class="card">
-                        <div class="card-image">
-                          <img src="assets/css/images/event-image-6.jpg">
-                        </div>
-                        <div class="card-content">
-                          This is content
-                        </div>
-                        <div class="card-action">
-                          <a id="link" href="#">More Info</a>
-                        </div>
-                      </div>
-                    </div>
-</div>
-
-
-
-
-<!-- <div class="row">
-  <div class="col s12 m7">
-    <div class="card medium">
-      <div class="card-image">
-        <img src="assets/css/images/event-image-6.jpg">
-        <span class="event-title">Event Title</span>
-      </div>
-      <div class="card-content">
-        <p>I'm a very simple card.</p>
-      </div>
-      <div class="card-action">
-        <a href="#">Link</a>
-      </div>
-    </div>
-  </div>
-</div> -->
-
-</section>
-
-
-  <!-- Modal Map Trigger -->
-  <a class="waves-effect waves-light btn modal-trigger" href="#modal2">Location</a>
-
-  <!-- Modal Structure -->
-  <div id="modal2" class="modal">
-    <div class="modal-content">
-      <h4>Map</h4>
-      <img id="map"> 
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-    </div>
-  </div>
 
 <!-- display results or no results section-->
 <section id="results-section">
@@ -326,9 +137,10 @@
     </div>
   </div>
 </section>
-<!-- jQuery -->
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- jQuery -->
+<script src="assets/lib/moment/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script src="assets/script/index.js"></script>
 <script src="map.js"></script>
