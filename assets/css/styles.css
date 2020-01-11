@@ -36,3 +36,7 @@
 .picker__day--selected, .picker__day--selected:hover, .picker--focused .picker__day--selected {
     background-color:#512da8;
 }
+
+.ticketsBtn {
+    background-color: #00bfa5
+}
