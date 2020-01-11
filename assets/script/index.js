@@ -74,18 +74,19 @@ function getEvents(searchTerm) {
             displayNoResults()
         } else {
             displayResults(response._embedded.events)
-        }
+        } 
 
-    });
+    })
 
-// function getCity(searchTerm) {
-//     $.ajax({
-//         method: "GET",
-//         url: `http://app.ticketmaster.com/discovery/v2/venues.json?keyword=${searchTerm}&${authKey}`
-//     }).then(function(response){
-//         console.log(response)
-//     });
-// }
+    // function cityEvents(searchTerm) {
+    //     $.ajax({
+    //         method: "GET",
+    //         url: `http://app.ticketmaster.com/discovery/v2/events/city.json?keyword=${searchTerm}&${authKey}`
+    //     }).then(function(response){
+    //         console.log(response)
+    //     })
+    // }
+
 
  }
 
@@ -109,15 +110,14 @@ function getEvents(searchTerm) {
 // If search is valid display colletion of events
  function displayResults(event) {
 
+    $("#section").removeClass("hide")
     collectionGroup.empty()
     console.log(event)
 
         var resultsDiv = $('#results-div');
         var navbarSearch = $('#event-search').val().trim()
-        var citySearch = $('#city-search').val().trim()
-        var rowCard = $('row card-rows')
-
-    
+        // var citySearch = $('#city-search').val().trim()
+        // var rowCard = $('row card-rows')
         var resultsHeader = $('<h3>');
         resultsHeader.addClass('results-header left-align');
         console.log(navbarSearch)
@@ -157,7 +157,7 @@ function getEvents(searchTerm) {
           var timeZone = event[i].dates.timezone
           console.log(timeZone)
 
-          collectionTime.html(`${moment(standardTime, 'HH:mm:ss').format('h:mm:ss A')} ${timeZone} Time`);
+          collectionTime.html(`${moment(standardTime, 'HH:mm:ss').format('h:mm A')} ${timeZone} Time`);
           collectionDate.append(collectionTime)
 
    
@@ -248,11 +248,8 @@ $(document).ready(function() {
             console.log(citySearch)
             console.log(navbarSearch)
             if(navbarSearch !== "") {
-                getEvents(navbarSearch)
-            } else if (citySearch !=="") {
-                getCity(citySearch)
-            }
-        //}
+                getEvents(navbarSearch, citySearch)
+        }
 
     })
 
@@ -263,7 +260,7 @@ $(document).ready(function() {
         if(e.keyCode === 13) {
             var navbarSearch= $('#sidenav-search').val().trim()
             console.log(navbarSearch)
-            if(navbarSearch !== "") {
+            if(navbarSearch !== "" || citySearch !== "") {
                 getEvents(navbarSearch)
             }
         }

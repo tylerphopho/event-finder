@@ -7,6 +7,7 @@
 
 }
 
+
 .input-field label {
     color: #512da8;
 }
@@ -24,4 +25,8 @@ body {
 
 main {
     flex: 1 0 auto;
+}
+
+.hide {
+    display: none
 }
