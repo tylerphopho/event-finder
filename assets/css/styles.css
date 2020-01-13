@@ -7,6 +7,21 @@
 
 }
 
+.brand-logo {
+    font-family: 'Righteous', cursive;
+}
+
+.slider {
+    margin-top: -25px;
+
+}
+
+.slides {
+    font-family: 'Bebas Neue', cursive;
+}
+
+
+
 #link {
     color: #00bfa5;
 }
@@ -21,22 +36,9 @@
     transform: translateY(-100px);
 }
 
-.picker__date-display{
-    background-color:#512da8;
+.caption h2 h5{
+    font-size: 200px;
 }
-
-.picker__weekday-display {
-    background-color:#512da8;
-}
-
-.picker__day--selected, .picker__day--selected:hover, .picker--focused .picker__day--selected {
-    background-color:#512da8;
-}
-
-.ticketsBtn {
-    background-color: #00bfa5
-}
-
 .event-date {
     font-size: 25px;
     color: #512da8;
@@ -51,10 +53,17 @@
 }
 
 .venue-header {
+    font-style: italic;
+}
+
+.event-title {
     font-weight: bold;
 }
 
+
 .btn-large {
+    margin-top: 15px;
+    margin-left:20px;
     background-color: white;
     border: 1px solid #512da8;
     color: #512da8;
@@ -63,4 +72,23 @@
 .btn-large:hover {
     background-color: #512da8;
     color: white;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+
+footer {
+    padding: 20px;
+}
+
+#map {
+    width: 300px;
 }

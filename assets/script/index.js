@@ -8,17 +8,6 @@ $(document).ready(function(){
         interval: 6000,
     })
 
-    // $(".datepicker").datepicker({
-    //     container: "body",
-    //     format: "mmmm dd/yyyy",
-    //     showClearBtn: false,
-    //     i18n:{
-    //         clear:'remove',
-    //         done: 'select'
-
-    //     }
-    // })
-
     $("select").formSelect();
 
     $(".modal").modal();
@@ -28,6 +17,8 @@ $(document).ready(function(){
         padding: 50,
         numVisible: 10
     });
+
+    $('.scrollspy').scrollSpy();
 });
 
 // variables
@@ -72,6 +63,7 @@ function getEvents(searchTerm) {
     resultsDiv.empty()
     resultsDiv.append(noResultsHeader)
     console.log('noResultsHeader')
+    $('#section').addClass('hide')
 
 
  }
@@ -84,7 +76,7 @@ function getEvents(searchTerm) {
 
         var resultsDiv = $('#results-div');
         var navbarSearch = $('#event-search').val().trim()
-        var citySearch = $('#city-search').val().trim()
+        // var citySearch = $('#city-search').val().trim()
         var rowCard = $('row card-rows')
 
     
@@ -142,7 +134,7 @@ function getEvents(searchTerm) {
 
           
           var eventTitle = $('<p>');
-          eventTitle.addClass = $('event-title');
+          eventTitle.addClass('event-title');
           eventTitle.html(event[i].name)
           titleCol.append(eventTitle)
 
@@ -248,10 +240,6 @@ function getEvents(searchTerm) {
        modalTitle.html(info[j].name)
        $('.event-detail').append(modalTitle)
 
-    
-
-
-
 
     //  console.log(info[j]._embedded.venues[0].location.longitude)
     //  var longitude = info[j]._embedded.venues[0].location.longitude;
@@ -270,6 +258,7 @@ $(document).ready(function() {
     $('#navbar-search').click(function(e) {
         e.preventDefault()
         console.log('click')
+        $('#section').removeClass('hide')
 
         // if(e.keyCode === 13) {
             var navbarSearch = $('#event-search').val().trim()
@@ -278,6 +267,8 @@ $(document).ready(function() {
             console.log(navbarSearch)
             if(navbarSearch !== "") {
                 getEvents(navbarSearch)
+            } else {
+                displayNoResults()
             }
         //}
 
@@ -296,30 +287,5 @@ $(document).ready(function() {
         }
     });
 
-
-  
-
-    // $("#link").on("click", function(){
-    //     carouselEvents()
-    // });
-    // function carouselEvents () {
-    //     $.ajax ({
-    //         method: "GET",
-    //         url: `https://app.ticketmaster.com/discovery/v2/events/images.json?size=1&${authKey}`,
-    //     }).then(function(response){
-    //        console.log(response)
-    //        var results = response.data
-    //        for (var i = 0; i > results.length; i++) {
-    //            var eventDiv = $("<div>");
-    //            var p = $("<p>");
-    //            p.text(results[i].rating);
-    //            var eventImage = $("<img>");
-    //            eventImage.attr("src", results[i].images.fixed_height.url);
-    //            eventDiv.append(p, eventImage);
-    //            $("#modalInfo").prepend(eventDiv);
-    //        }
-    //     })
-    // }
-    
 }); 
 
