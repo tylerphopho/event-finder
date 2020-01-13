@@ -36,3 +36,31 @@
 .ticketsBtn {
     background-color: #00bfa5
 }
+
+.event-date {
+    font-size: 25px;
+    color: #512da8;
+}
+
+.event-row {
+    margin: 20px;
+}
+
+.middle-col {
+    padding: 0 50px;
+}
+
+.venue-header {
+    font-weight: bold;
+}
+
+.btn-large {
+    background-color: white;
+    border: 1px solid #512da8;
+    color: #512da8;
+}
+
+.btn-large:hover {
+    background-color: #512da8;
+    color: white;
+}

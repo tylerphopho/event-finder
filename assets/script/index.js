@@ -106,7 +106,7 @@ function getEvents(searchTerm) {
           collectionGroup.append(collectionItem);
 
           var eventRow = $('<div>');
-          eventRow.addClass('row')
+          eventRow.addClass('row event-row')
           collectionItem.append(eventRow);
 
           var eventCol = $('<div>');
@@ -125,14 +125,14 @@ function getEvents(searchTerm) {
 
           var standardTime = event[i].dates.start.localTime
           var timeZone = event[i].dates.timezone
-          console.log(timeZone)
+        //   console.log(timeZone)
 
-          collectionTime.html(`${moment(standardTime, 'HH:mm:ss').format('h:mm:ss A')} ${timeZone} Time`);
-          collectionDate.append(collectionTime)
+          collectionTime.html(`${moment(standardTime, 'HH:mm').format('h:mm A')} ${timeZone} Time`);
+          eventCol.append(collectionTime)
 
    
           var titleCol = $('<div>');
-          titleCol.addClass('col m5');
+          titleCol.addClass('col m5 middle-col');
           eventRow.append(titleCol);
 
           var eventVenue = $('<h6>');
@@ -150,14 +150,31 @@ function getEvents(searchTerm) {
           var detailsBtnCol = $('<div>');
           detailsBtnCol.addClass('col m2').on('click', 'button', function(e) {
             e.preventDefault();
-            console.log('click')
-            var navbarSearch= $('#navbar-search').val().trim()
-            getModal()
+            console.log(
+                $(this).data('index')
+                )
+               
+                // large array of all data
+        event
+                // console.log(info[j]._embedded.venues[0].location.longitude)
+                // var longitude = info[j]._embedded.venues[0].location.longitude;
+                // var latitude = info[j]._embedded.venues[0].location.latitude;
+                // console.log(longitude, latitude)
+
+            
+            modalCall(event[$(this).data('index')].name)
+                //somevar here
+            var longEvent = event[$(this).data('index')]._embedded.venues[0].location.longitude;
+            var latEvent = event[$(this).data('index')]._embedded.venues[0].location.latitude;
+            findEvent(longEvent, latEvent);
+            // [""0""]._embedded.venues[""0""].location.longitude
+            console.log(longEvent);
           });
           eventRow.append(detailsBtnCol);
 
         // button for event details
-        var detailsBtn = $('<button class="btn-large modal-trigger" data-target="modal1">')
+        var detailsBtn = $('<button class="btn-large modal-trigger" data-target="modal1" data-index="' + i + '">')
+        
         detailsBtn.html('Details')
         detailsBtnCol.append(detailsBtn)
 
@@ -174,35 +191,77 @@ function getEvents(searchTerm) {
 
         }
  }
-
- function modalInfo(eventInfo) {
-     console.log('get some info')
-     modalContent.empty()
+ function findEvent(longitude, latitude){
+    // findEvent(longitude, latitude)
+    // var longitude= event[i]._embedded.venues[0].location.longitude;
     
-    //  var navbarSearch = $('#event-search').val().trim()
-    
-    // for(var j = 0; eventInfo.length; j++) {
-    //     var modalHeader = $('<h4 class="modal-header>');
-    //     modalHeader.html("this is some words")
-    //     modalContent.append(modalHeader);
-    // }
-  
+        var queryMapAPI = 'https://image.maps.ls.hereapi.com/mia/1.6/mapview'+
+        '?apiKey=OsiyIDiSxgJ3oNZHVzo-E2tc6EB4kpsp6yJApZiheIc'+
+        '&lat='+ latitude +
+        '&lon=' + longitude + 
+        '&vt=0' +
+        '&z=14'
+        $('#map').attr("src", queryMapAPI); 
+        console.log(queryMapAPI);
 
- }
+        }
+
+
 
  // function to display the modal with additional event details
-function getModal(searchTerm) {
-    var queryUrlModal = `http://app.ticketmaster.com/discovery/v2/events.json?keyword=${searchTerm}&${authKey}`;
-
+ function modalCall(searchTerm) {
+    var queryUrlBase = `http://app.ticketmaster.com/discovery/v2/events.json?keyword=${searchTerm}&${authKey}`
     $.ajax({
         method: "GET",
-        url: queryUrlModal
-    }).then(function(details, info) {
-        console.log(details._embedded.events)
-
-        modalInfo(details._embedded.events)
+        url: queryUrlBase
+    }).then(function(response) {
+        // console.log(response._embedded.events[0])
+            modalInfo(response._embedded.events)
+            console.log(response._embedded.events[1])
+        
     });
-}
+ }
+
+
+ function modalInfo(info) {
+    $(".event-detail").empty()
+    
+    // console.log('some info')
+    for(var j = 0; j < info.length; j++) {
+
+        var modalHeader = $('<p class="event-date">');
+        // console.log(info[j].name);      
+        var modalDate = info[j].dates.start.localDate;
+        modalHeader.html(`${moment(modalDate).format('ll')}`);
+       $(".event-detail").append(modalHeader)
+
+       var modalTime = $('<p class="event-time>');
+
+       var standardTime = info[j].dates.start.localTime
+       var timeZone = info[j].dates.timezone
+
+       modalTime.html(`${moment(standardTime, 'HH:mm').format('h:mm A')} ${timeZone} Time`);
+       $('.event-detail').append(modalTime)
+
+       var modalTitle = $('<h5>');
+       modalTitle.addClass = $('event-title bold');
+       modalTitle.html(info[j].name)
+       $('.event-detail').append(modalTitle)
+
+    
+
+
+
+
+    //  console.log(info[j]._embedded.venues[0].location.longitude)
+    //  var longitude = info[j]._embedded.venues[0].location.longitude;
+    //  var latitude = info[j]._embedded.venues[0].location.latitude;
+    //  console.log(longitude, latitude)
+    }
+     
+ }
+
+
 
 $(document).ready(function() {
 

@@ -6,10 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- <link rel="stylesheet" href="assets/css/styles.css"> -->
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="assets/css/materialize/css/materialize.min.css"  media="screen,projection"/>
-    <title>Event Finder</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <title>Event Hub</title>
     
 </head>
 <body>
@@ -17,7 +18,7 @@
 <!-- ​Navbar Section -->
 <nav class="nav-wrapper deep-purple darken-2">
   <div class="container">
-    <a href="#" class="brand-logo">Event Finder</a>
+    <a href="#" class="brand-logo">Event Hub</a>
     <a href="#" class="sidenav-trigger" data-target="mobile-links">
       <i class="material-icons">menu</i>
     </a>
@@ -47,16 +48,25 @@
   </div>
 </nav>
 
+
 <!-- Navbar Modal Structure section -->
 <div id="modal1" class="modal">
-  <div class="modal-content">
-  <!-- <h4>Hello world</h4>
-  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam est dolor provident, consequatur necessitatibus architecto! Excepturi quos eligendi, commodi facere minima ipsam. Eos fugiat libero est culpa quibusdam error totam.</p> -->
-  </div>
-  <div class="modal-footer">
-    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
-  </div>
-</div>​
+    <div class="modal-content">
+      <div class="detail-content row">
+      
+        <div class="event-detail col s6"></div>
+        <div class="event-map col s4">
+          <img id="map"> 
+        </div>
+      </div>
+    <!-- <h4>Hello world</h4>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam est dolor provident, consequatur necessitatibus architecto! Excepturi quos eligendi, commodi facere minima ipsam. Eos fugiat libero est culpa quibusdam error totam.</p> -->
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+      <!-- <p>Univerisity of Utah  Code Breakefrs Group Project 1 @ copywrite 2020</p> -->
+    </div>
+  </div>​
 
 
 <!-- Mobile Sidnav -->
@@ -129,6 +139,8 @@
     </div>
   </div>
 </section>
+
+
 
 <!-- jQuery -->
 <script src="assets/lib/moment/moment.min.js"></script>
