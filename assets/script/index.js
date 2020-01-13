@@ -102,7 +102,7 @@ function getEvents(searchTerm) {
           collectionItem.append(eventRow);
 
           var eventCol = $('<div>');
-          eventCol.addClass('col m2')
+          eventCol.addClass('col l2')
           eventRow.append(eventCol)
           var collectionDate = $('<span>')
           collectionDate.addClass('event-date');
@@ -124,10 +124,10 @@ function getEvents(searchTerm) {
 
    
           var titleCol = $('<div>');
-          titleCol.addClass('col m5 middle-col');
+          titleCol.addClass('col l5 middle-col');
           eventRow.append(titleCol);
 
-          var eventVenue = $('<h6>');
+          var eventVenue = $('<h5>');
           eventVenue.addClass('venue-header');
           eventVenue.html(`${event[i]._embedded.venues[0].name} - ${event[i]._embedded.venues[0].city.name}, ${event[i]._embedded.venues[0].state.name}`)
           titleCol.append(eventVenue);
@@ -140,18 +140,11 @@ function getEvents(searchTerm) {
 
           // col for details button 
           var detailsBtnCol = $('<div>');
-          detailsBtnCol.addClass('col m2').on('click', 'button', function(e) {
+          detailsBtnCol.addClass('col l2').on('click', 'button', function(e) {
             e.preventDefault();
             console.log(
                 $(this).data('index')
                 )
-               
-                // large array of all data
-        event
-                // console.log(info[j]._embedded.venues[0].location.longitude)
-                // var longitude = info[j]._embedded.venues[0].location.longitude;
-                // var latitude = info[j]._embedded.venues[0].location.latitude;
-                // console.log(longitude, latitude)
 
             
             modalCall(event[$(this).data('index')].name)
@@ -172,7 +165,7 @@ function getEvents(searchTerm) {
 
           // col for tickets button 
           var ticketsBtnCol = $('<div>');
-          ticketsBtnCol.addClass('col m2');
+          ticketsBtnCol.addClass('col l2');
           eventRow.append(ticketsBtnCol);
 
         // button for event tickets
@@ -183,6 +176,8 @@ function getEvents(searchTerm) {
 
         }
  }
+
+ // function to display the location of event on map inside the popup modal
  function findEvent(longitude, latitude){
     // findEvent(longitude, latitude)
     // var longitude= event[i]._embedded.venues[0].location.longitude;
@@ -194,6 +189,7 @@ function getEvents(searchTerm) {
         '&vt=0' +
         '&z=14'
         $('#map').attr("src", queryMapAPI); 
+        $('#map').addClass('responsive-img')
         console.log(queryMapAPI);
 
         }
@@ -214,11 +210,12 @@ function getEvents(searchTerm) {
     });
  }
 
-
+// function for popup modal displaying additional info about event
  function modalInfo(info) {
     $(".event-detail").empty()
     
     // console.log('some info')
+    // create for loop to loop through and display info in modal
     for(var j = 0; j < info.length; j++) {
 
         var modalHeader = $('<p class="event-date">');
@@ -227,18 +224,32 @@ function getEvents(searchTerm) {
         modalHeader.html(`${moment(modalDate).format('ll')}`);
        $(".event-detail").append(modalHeader)
 
+       // create element to hold the event time
        var modalTime = $('<p class="event-time>');
-
+        // create variables for the time and time zone
        var standardTime = info[j].dates.start.localTime
        var timeZone = info[j].dates.timezone
 
+       // format the time and time zone
        modalTime.html(`${moment(standardTime, 'HH:mm').format('h:mm A')} ${timeZone} Time`);
        $('.event-detail').append(modalTime)
 
+       // Create element for modal title display
        var modalTitle = $('<h5>');
        modalTitle.addClass = $('event-title bold');
        modalTitle.html(info[j].name)
        $('.event-detail').append(modalTitle)
+
+       // create elements for the address in the popup modal
+       var modalAddress = $('<p class="modal-address">');
+       modalAddress.html(`${info[j]._embedded.venues[0].address.line1}, ${info[j]._embedded.venues[0].city.name}, ${info[j]._embedded.venues[0].state.name}`)
+       $('.event-detail').append(modalAddress)
+
+
+        // button for event tickets in modal
+        var ticketsBtn = $(`<a href="${info[j].url}" target="_blank" class="btn-large tickets-button">`);
+        ticketsBtn.html('Tickets')
+        $(".event-detail").append(ticketsBtn)
 
 
     //  console.log(info[j]._embedded.venues[0].location.longitude)
@@ -283,6 +294,8 @@ $(document).ready(function() {
             console.log(navbarSearch)
             if(navbarSearch !== "") {
                 getEvents(navbarSearch)
+            } else {
+                displayNoResults()
             }
         }
     });

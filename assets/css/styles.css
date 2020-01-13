@@ -13,7 +13,7 @@
 
 .slider {
     margin-top: -25px;
-
+ 
 }
 
 .slides {
@@ -21,6 +21,11 @@
 }
 
 
+img {
+    background: linear-gradient(
+        rgba(20,20,20, .5), 
+        rgba(20,20,20, .5));
+}
 
 #link {
     color: #00bfa5;
@@ -39,9 +44,17 @@
 .caption h2 h5{
     font-size: 200px;
 }
+
+
+
+#results-div {
+    font-family: 'Bebas Neue', cursive;
+}
+
 .event-date {
     font-size: 25px;
     color: #512da8;
+    font-weight: bold;
 }
 
 .event-row {
@@ -92,3 +105,11 @@ footer {
 #map {
     width: 300px;
 }
+
+
+
+@media only screen and (max-width: 1200px) {
+    .col .m2 {
+     margin: 50px;
+    }
+  }
