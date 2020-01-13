@@ -271,6 +271,8 @@ $(document).ready(function() {
         console.log('click')
         $('#section').removeClass('hide')
 
+        $('.results').removeClass('hide');
+
         // if(e.keyCode === 13) {
             var navbarSearch = $('#event-search').val().trim()
             // var citySearch = $('#city-serach').val().trim();
@@ -291,6 +293,7 @@ $(document).ready(function() {
  
         if(e.keyCode === 13) {
             var navbarSearch= $('#sidenav-search').val().trim()
+            $('.results').removeClass('hide');
             console.log(navbarSearch)
             if(navbarSearch !== "") {
                 getEvents(navbarSearch)
