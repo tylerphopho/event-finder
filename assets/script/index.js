@@ -32,7 +32,7 @@ var modalContent = $('.modal-content');
 var authKey = 'apikey=PmVlmcvc5NaJ0GJLCwaEc2KY1DzDLaKv';
 
 function getEvents(searchTerm) {
-    var queryUrlBase = `http://app.ticketmaster.com/discovery/v2/events.json?keyword=${searchTerm}&${authKey}`
+    var queryUrlBase = `https://app.ticketmaster.com/discovery/v2/events.json?keyword=${searchTerm}&${authKey}`
 
     $.ajax({
         method: "GET",
@@ -198,7 +198,7 @@ function getEvents(searchTerm) {
 
  // function to display the modal with additional event details
  function modalCall(searchTerm) {
-    var queryUrlBase = `http://app.ticketmaster.com/discovery/v2/events.json?keyword=${searchTerm}&${authKey}`
+    var queryUrlBase = `https://app.ticketmaster.com/discovery/v2/events.json?keyword=${searchTerm}&${authKey}`
     $.ajax({
         method: "GET",
         url: queryUrlBase
