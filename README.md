@@ -2,7 +2,7 @@
 
 Event Hub is a group project where we built a application that will allows users to find events by event name or by city name in the navigation bar. Once the user adds the event name or city a list of events will with information about the event. User can click 'details' which will display a popup modal with additional details about the event and have a map with pin point of location.
 
-<img class="img-fluid py-2" src="assets/images/cover.png" alt="screen shot" width="200" height="200"> 
+<img class="img-fluid py-2" src="assets/css/images/cover.png" alt="screen shot" width="200" height="200"> 
           
 
 ## Getting Started
