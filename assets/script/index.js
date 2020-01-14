@@ -287,19 +287,22 @@ $(document).ready(function() {
     })
 
      // Create click event function for for search input in sidebar nav for mobile   
-     $('#sidenav-search').keyup(function(e) {
+     $('#sidebar-button').click(function(e) {
+         console.log('click')
         e.preventDefault()
- 
-        if(e.keyCode === 13) {
+        $('#section').removeClass('hide')
+
+        $('.results').removeClass('hide');
+        // if(e.keyCode === 13) {
             var navbarSearch= $('#sidenav-search').val().trim()
-            $('.results').removeClass('hide');
+            // $('.results').removeClass('hide');
             console.log(navbarSearch)
             if(navbarSearch !== "") {
                 getEvents(navbarSearch)
             } else {
                 displayNoResults()
             }
-        }
+        //}
     });
 
 }); 

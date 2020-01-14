@@ -73,6 +73,11 @@ img {
     font-weight: bold;
 }
 
+#sidebar-button {
+    background-color: #512da8;
+    margin: 0 50px;
+    width: 80%;
+}
 
 .btn-large {
     margin-top: 15px;
