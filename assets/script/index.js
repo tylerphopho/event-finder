@@ -195,7 +195,6 @@ function getEvents(searchTerm) {
         }
 
 
-
  // function to display the modal with additional event details
  function modalCall(searchTerm) {
     var queryUrlBase = `https://app.ticketmaster.com/discovery/v2/events.json?keyword=${searchTerm}&${authKey}`

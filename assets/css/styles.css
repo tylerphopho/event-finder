@@ -100,13 +100,13 @@ main {
 
 footer {
     padding: 20px;
+    /* position: fixed; */
 }
 
 #map {
+    margin-top: 20px;
     width: 300px;
 }
-
-
 
 @media only screen and (max-width: 1200px) {
     .col .m2 {
